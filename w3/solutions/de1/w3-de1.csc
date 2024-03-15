@@ -7,7 +7,7 @@
   <project EXPORT="discard">[APPS_DIR]/collect-view</project>
   <project EXPORT="discard">[APPS_DIR]/powertracker</project>
   <simulation>
-    <title>w3-ex1</title>
+    <title>w3-de1</title>
     <randomseed>123456</randomseed>
     <motedelay_us>1000000</motedelay_us>
     <radiomedium>
@@ -23,10 +23,10 @@
     <motetype>
       se.sics.cooja.mspmote.SkyMoteType
       <identifier>sky1</identifier>
-      <description>sender</description>
-      <source EXPORT="discard">[CONTIKI_DIR]/examples/ipv6/rpl-udp/sender_authentication.c</source>
-      <commands EXPORT="discard">make sender_authentication.sky TARGET=sky</commands>
-      <firmware EXPORT="copy">[CONTIKI_DIR]/examples/ipv6/rpl-udp/sender_authentication.sky</firmware>
+      <description>receiver</description>
+      <source EXPORT="discard">[CONTIKI_DIR]/examples/ipv6/rpl-udp/receiver_authentication-w3-de1.c</source>
+      <commands EXPORT="discard">make receiver_authentication-w3-de1.sky TARGET=sky</commands>
+      <firmware EXPORT="copy">[CONTIKI_DIR]/examples/ipv6/rpl-udp/receiver_authentication-w3-de1.sky</firmware>
       <moteinterface>se.sics.cooja.interfaces.Position</moteinterface>
       <moteinterface>se.sics.cooja.interfaces.RimeAddress</moteinterface>
       <moteinterface>se.sics.cooja.interfaces.IPAddress</moteinterface>
@@ -46,10 +46,10 @@
     <motetype>
       se.sics.cooja.mspmote.SkyMoteType
       <identifier>sky2</identifier>
-      <description>receiver</description>
-      <source EXPORT="discard">[CONTIKI_DIR]/examples/ipv6/rpl-udp/receiver_authentication.c</source>
-      <commands EXPORT="discard">make receiver_authentication.sky TARGET=sky</commands>
-      <firmware EXPORT="copy">[CONTIKI_DIR]/examples/ipv6/rpl-udp/receiver_authentication.sky</firmware>
+      <description>sender</description>
+      <source EXPORT="discard">[CONTIKI_DIR]/examples/ipv6/rpl-udp/sender_authentication-w3-de1.c</source>
+      <commands EXPORT="discard">make sender_authentication-w3-de1.sky TARGET=sky</commands>
+      <firmware EXPORT="copy">[CONTIKI_DIR]/examples/ipv6/rpl-udp/sender_authentication-w3-de1.sky</firmware>
       <moteinterface>se.sics.cooja.interfaces.Position</moteinterface>
       <moteinterface>se.sics.cooja.interfaces.RimeAddress</moteinterface>
       <moteinterface>se.sics.cooja.interfaces.IPAddress</moteinterface>
@@ -70,8 +70,8 @@
       <breakpoints />
       <interface_config>
         se.sics.cooja.interfaces.Position
-        <x>84.0200979690209</x>
-        <y>59.07569545568106</y>
+        <x>89.33509100946425</x>
+        <y>13.70829442676553</y>
         <z>0.0</z>
       </interface_config>
       <interface_config>
@@ -84,8 +84,8 @@
       <breakpoints />
       <interface_config>
         se.sics.cooja.interfaces.Position
-        <x>78.17628352175477</x>
-        <y>30.33744077718562</y>
+        <x>91.37143830241546</x>
+        <y>19.387122088798495</y>
         <z>0.0</z>
       </interface_config>
       <interface_config>
@@ -108,10 +108,13 @@
     <plugin_config>
       <moterelations>true</moterelations>
       <skin>se.sics.cooja.plugins.skins.IDVisualizerSkin</skin>
-      <viewport>10.945182930013695 0.0 0.0 10.945182930013695 -693.6345330014135 -316.3215662074807</viewport>
+      <skin>se.sics.cooja.plugins.skins.TrafficVisualizerSkin</skin>
+      <skin>se.sics.cooja.plugins.skins.LogVisualizerSkin</skin>
+      <skin>se.sics.cooja.plugins.skins.AddressVisualizerSkin</skin>
+      <viewport>34.86635125833663 0.0 0.0 34.86635125833663 -2970.788662831451 -388.9582086363053</viewport>
     </plugin_config>
     <width>400</width>
-    <z>4</z>
+    <z>2</z>
     <height>400</height>
     <location_x>1</location_x>
     <location_y>1</location_y>
@@ -123,8 +126,8 @@
       <formatted_time />
       <coloring />
     </plugin_config>
-    <width>1040</width>
-    <z>3</z>
+    <width>752</width>
+    <z>5</z>
     <height>240</height>
     <location_x>400</location_x>
     <location_y>160</location_y>
@@ -139,11 +142,11 @@
       <showLEDs />
       <zoomfactor>500.0</zoomfactor>
     </plugin_config>
-    <width>1440</width>
-    <z>2</z>
+    <width>1152</width>
+    <z>4</z>
     <height>166</height>
     <location_x>0</location_x>
-    <location_y>571</location_y>
+    <location_y>827</location_y>
   </plugin>
   <plugin>
     se.sics.cooja.plugins.Notes
@@ -151,11 +154,26 @@
       <notes>Enter notes here</notes>
       <decorations>true</decorations>
     </plugin_config>
-    <width>760</width>
-    <z>1</z>
+    <width>472</width>
+    <z>3</z>
     <height>160</height>
     <location_x>680</location_x>
     <location_y>0</location_y>
+  </plugin>
+  <plugin>
+    se.sics.cooja.plugins.RadioLogger
+    <plugin_config>
+      <split>150</split>
+      <formatted_time />
+      <showdups>false</showdups>
+      <hidenodests>false</hidenodests>
+      <analyzers name="6lowpan-pcap" />
+    </plugin_config>
+    <width>500</width>
+    <z>1</z>
+    <height>300</height>
+    <location_x>54</location_x>
+    <location_y>428</location_y>
   </plugin>
 </simconf>
 
