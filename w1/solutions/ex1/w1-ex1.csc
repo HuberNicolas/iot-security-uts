@@ -7,7 +7,7 @@
   <project EXPORT="discard">[APPS_DIR]/collect-view</project>
   <project EXPORT="discard">[APPS_DIR]/powertracker</project>
   <simulation>
-    <title>week1-example2</title>
+    <title>w1-ex1</title>
     <randomseed>123456</randomseed>
     <motedelay_us>1000000</motedelay_us>
     <radiomedium>
@@ -24,9 +24,9 @@
       se.sics.cooja.mspmote.SkyMoteType
       <identifier>sky1</identifier>
       <description>Sky Mote Type #sky1</description>
-      <source EXPORT="discard">[CONTIKI_DIR]/examples/sky/example1_test_led-3.c</source>
-      <commands EXPORT="discard">make example1_test_led-3.sky TARGET=sky</commands>
-      <firmware EXPORT="copy">[CONTIKI_DIR]/examples/sky/example1_test_led-3.sky</firmware>
+      <source EXPORT="discard">[CONTIKI_DIR]/examples/sky/exercise1_press_button-2-w1-ex1.c</source>
+      <commands EXPORT="discard">make exercise1_press_button-2-w1-ex1.sky TARGET=sky</commands>
+      <firmware EXPORT="copy">[CONTIKI_DIR]/examples/sky/exercise1_press_button-2-w1-ex1.sky</firmware>
       <moteinterface>se.sics.cooja.interfaces.Position</moteinterface>
       <moteinterface>se.sics.cooja.interfaces.RimeAddress</moteinterface>
       <moteinterface>se.sics.cooja.interfaces.IPAddress</moteinterface>
@@ -47,8 +47,8 @@
       <breakpoints />
       <interface_config>
         se.sics.cooja.interfaces.Position
-        <x>15.298766227675486</x>
-        <y>68.09872266102168</y>
+        <x>91.19064770579477</x>
+        <y>31.859142116967554</y>
         <z>0.0</z>
       </interface_config>
       <interface_config>
@@ -71,11 +71,12 @@
     <plugin_config>
       <moterelations>true</moterelations>
       <skin>se.sics.cooja.plugins.skins.IDVisualizerSkin</skin>
-      <skin>se.sics.cooja.plugins.skins.LEDVisualizerSkin</skin>
-      <viewport>0.9090909090909091 0.0 0.0 0.9090909090909091 180.0920307021132 111.0920703081621</viewport>
+      <skin>se.sics.cooja.plugins.skins.MoteTypeVisualizerSkin</skin>
+      <skin>se.sics.cooja.plugins.skins.UDGMVisualizerSkin</skin>
+      <viewport>0.9090909090909091 0.0 0.0 0.9090909090909091 111.0994111765502 144.0371435300295</viewport>
     </plugin_config>
     <width>400</width>
-    <z>2</z>
+    <z>1</z>
     <height>400</height>
     <location_x>1</location_x>
     <location_y>1</location_y>
@@ -87,8 +88,8 @@
       <formatted_time />
       <coloring />
     </plugin_config>
-    <width>1040</width>
-    <z>3</z>
+    <width>752</width>
+    <z>5</z>
     <height>240</height>
     <location_x>400</location_x>
     <location_y>160</location_y>
@@ -102,11 +103,11 @@
       <showLEDs />
       <zoomfactor>500.0</zoomfactor>
     </plugin_config>
-    <width>1440</width>
-    <z>5</z>
+    <width>1152</width>
+    <z>4</z>
     <height>166</height>
     <location_x>0</location_x>
-    <location_y>571</location_y>
+    <location_y>795</location_y>
   </plugin>
   <plugin>
     se.sics.cooja.plugins.Notes
@@ -114,8 +115,8 @@
       <notes>Enter notes here</notes>
       <decorations>true</decorations>
     </plugin_config>
-    <width>760</width>
-    <z>4</z>
+    <width>472</width>
+    <z>3</z>
     <height>160</height>
     <location_x>680</location_x>
     <location_y>0</location_y>
@@ -128,10 +129,10 @@
       <scrollpos>0,0</scrollpos>
     </plugin_config>
     <width>350</width>
-    <z>1</z>
+    <z>2</z>
     <height>300</height>
-    <location_x>773</location_x>
-    <location_y>18</location_y>
+    <location_x>84</location_x>
+    <location_y>422</location_y>
   </plugin>
 </simconf>
 
