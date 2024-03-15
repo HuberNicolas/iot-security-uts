@@ -33,9 +33,9 @@
 /*****************Variable declarations*****************************/
 char *appdata;
 
-const char text1[100]={"client1"}; // the client's identity
+const char text1[100]={"IoTLab"}; // the client's identity was changed from client1 to IoTLab
 const char hash[32]; // used to store hash
-int key = 5; // key for Caesar cipher algorithm
+int key = 6; // this was changed from 5 to 6
 
 SHA256_CTX ctx;
 int reply=0;
@@ -101,7 +101,7 @@ void receive_hash()
  uip_ipaddr_copy(&server_conn->ripaddr, &UIP_IP_BUF->srcipaddr);
 
  if(reply==1){
-    uip_udp_packet_send(server_conn,"ACK",sizeof("ACK")); //send ACK message to the client
+    uip_udp_packet_send(server_conn,"ACK",sizeof("ACK")); //send ACK message to the client, this was mentioned in description, no need to change
     flag++;} //increase flag to receive the encrypted message
  else
     uip_udp_packet_send(server_conn,"NACK",sizeof("NACK")); // send NACK message to the client
@@ -133,7 +133,7 @@ printf("Decrypted message : %s \n",cipher_decrypt);
 
 PRINTF("Server sending reply....\n");
     uip_ipaddr_copy(&server_conn->ripaddr, &UIP_IP_BUF->srcipaddr); //Copying source ip address to remote ip address
-    uip_udp_packet_send(server_conn,"Msg Received",sizeof("Msg Received")); //sending UDP packets through uIP
+    uip_udp_packet_send(server_conn,"Msg Received",sizeof("Msg Received")); //sending UDP packets through uIP, this was mentioned in description, no need to change
     uip_create_unspecified(&server_conn->ripaddr); //set IP address a to unspecified 
 flag++;
 }
