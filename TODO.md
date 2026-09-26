@@ -13,7 +13,7 @@ state is kept in the private repository `iot-security-uts-archive`.
 
 - [x] Add the MIT license and note the BSD-licensed Contiki code
 - [x] Add the course context (subject, institution, semester) to the README
-- [ ] Rewrite the history: old email addresses to `nicolas.huber.dev@gmail.com`, removed UTS material out of all
+- [x] Rewrite the history: old email addresses to `nicolas.huber.dev@gmail.com`, removed UTS material out of all
       commits
 - [ ] Rename the repository on GitHub to `iot-security-uts`, then run
       `git remote set-url origin git@github.com:HuberNicolas/iot-security-uts.git`
